@@ -1,7 +1,7 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic");
 body {
-  background-image: url("https://media.discordapp.net/attachments/763767615042224149/875370432222613584/3eb7b267-4788-47e7-a021-080c4d9f8d3f.png?width=609&height=406");
+  background-image: url("https://media.discordapp.net/attachments/844556108726796288/884480380646854656/lomooo.jpeg?width=1125&height=563");
 }
 ::-webkit-scrollbar {
   width: 10px;
@@ -4182,7 +4182,7 @@ body {
   z-index: 10000;
 }
 .coolHeader .coolHeads,.coolHeaderText {
-  margin: 5px 20px;
+  margin: 10px 20px;
   font-family: Raleway;
   font-weight: 600;
   letter-spacing: 3px;
@@ -4207,7 +4207,7 @@ body {
   justify-content: center;
 }
 
-.sicdordSponsor div {
+.sicdordSponsor > div {
   margin: 40px 20px;
 }
 .sicdordSponsor iframe:nth-child(1) {
@@ -4235,46 +4235,163 @@ body {
 .dibbaStarr {
   display: none;
 }
-.contactDiscord {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-}
-.pocostarr {
-  width: 40vw;
-}
-.sicdord {
-  height: 90%;
-  width: 22vw;
-  padding: 0;
-}
-.newSponsors {
-  width: 70vw;
-  background-color: white;
-  margin-top: 40px;
+/* carousel */
+.carousel {
+  position: relative;
+  /* box-shadow: 0px 0px 6px rgba(146, 136, 136, 0.64); */
+  border: 2px solid #000;
+  width: 30vw;
+  height: 70vh;
+  /* box-shadow: 0 0 30px rgb(51, 51, 51); */
   border-radius: 20px;
-  border: 7px solid #000;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 30px;
-}
-.newSponsors img {
+  border: 5px solid rgb(42, 39, 49);
 
+}
+
+.carousel-inner {
+  position: relative;
+  overflow: hidden;
   width: 100%;
-}
-.newSponsors a {
-  width: 18%;
-  height: 40%;
-  margin: 20px;
+  height: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
-@media (max-width: 600px) {
+
+.carousel-open:checked + .carousel-item {
+  /* position: static; */
+  opacity: 100;
+}
+
+.carousel-item {
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity 0.6s ease-out;
+  transition: opacity 0.6s ease-out;
+  display: flex;
+  justify-content: center;
+
+}
+
+.carousel-item img {
+  display: block;
+  max-width: 80%;
+  object-fit: cover;
+  height: 80%;
+}
+
+.carousel-control {
+  background: rgba(0, 0, 0, 0.28);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  font-size: 40px;
+  height: 40px;
+  line-height: 35px;
+  position: absolute;
+  top: 50%;
+  /* -webkit-transform: translate(0, -50%);
+  cursor: pointer;
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%); */
+  text-align: center;
+  width: 40px;
+  z-index: 10;
+}
+
+.carousel-control.prev {
+  left: 2%;
+}
+
+.carousel-control.next {
+  right: 2%;
+}
+
+.carousel-control:hover {
+  background: rgba(0, 0, 0, 0.8);
+  color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+  display: block;
+}
+
+.carousel-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+}
+
+.carousel-indicators li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.carousel-bullet {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 35px;
+}
+
+.carousel-bullet:hover {
+  color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+  color: #428bca;
+}
+
+#title {
+  width: 100%;
+  position: absolute;
+  padding: 0px;
+  margin: 0px auto;
+  text-align: center;
+  font-size: 27px;
+  color: rgba(255, 255, 255, 1);
+  font-family: 'Open Sans', sans-serif;
+  z-index: 9999;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), -1px 0px 2px rgba(255, 255, 255, 0);
+}
+.logoLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border: 5px solid rgb(49, 49, 49);
+  width: 30vw;
+  height: 33vw;
+  flex-wrap: wrap;
+  border-radius: 20px;
+}
+.logoLinks img {
+  margin: 20px;
+}
+@media (min-width: 800px) {
+  .logoLinks img {
+    height: 80px;
+  }
+}
+@media (max-width: 800px) {
+  .logoLinks {
+    width: 80vw;
+  }
+  .logoLinks img {
+    width: 80%;
+    margin: 30px;
+  }
   .sicdordSponsor {
     flex-direction: column;
   }
@@ -4283,6 +4400,13 @@ body {
   }
   .sicdordSponsor iframe:nth-child(2) {
     width: 80vw;
+  }
+  .carousel {
+    width: 80vw;
+    height: 70vh;
+  }
+  .carousel-item img {
+    max-width: 100%;
   }
   .ponsorDivide {
     display: none;
@@ -4296,22 +4420,5 @@ body {
   .dibbaStarr {
     display: flex;
   }
-  .contactDiscord {
-    flex-direction: column;
-  }
-  .pocostarr {
-    width: 80vw;
-  }
-  .sicdord {
-    width: 80vw;
-    height: 50vh;
-  }
-  .newSponsors {
-    width: 80vw;
-    flex-direction: column;
-  }
-  .newSponsors a {
-    width: 80%;
-    height: 100px;
-  }
 }
+
